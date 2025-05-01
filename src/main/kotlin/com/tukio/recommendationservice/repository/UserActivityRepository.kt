@@ -66,7 +66,7 @@ interface UserActivityRepository : JpaRepository<UserActivity, Long> {
         SELECT AVG(a.rating)
         FROM UserActivity a
         WHERE a.eventId = :eventId
-        AND a.activityType = 'RATE'
+        AND a.activityType = com.tukio.recommendationservice.model.ActivityType.RATE
         AND a.rating IS NOT NULL
     """)
     fun findAverageRatingForEvent(@Param("eventId") eventId: Long): Double?
