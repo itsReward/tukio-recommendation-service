@@ -21,6 +21,7 @@ interface UserActivityRepository : JpaRepository<UserActivity, Long> {
 
     fun findByEventIdAndActivityType(eventId: Long, activityType: ActivityType): List<UserActivity>
 
+
     @Query("""
         SELECT a FROM UserActivity a
         WHERE a.userId = :userId
