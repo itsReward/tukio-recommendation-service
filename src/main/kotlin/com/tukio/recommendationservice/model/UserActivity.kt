@@ -17,6 +17,7 @@ data class UserActivity(
     val eventId: Long,
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     val activityType: ActivityType,
 
     @Column(nullable = true)
